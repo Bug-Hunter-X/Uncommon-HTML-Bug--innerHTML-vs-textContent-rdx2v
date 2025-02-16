@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+
+  <script>
+    // Incorrect way to access and modify the content of the div
+    document.getElementById('myDiv').textContent = "This is a test"; //This will replace the content
+    document.getElementById('myDiv').innerHTML += "<p>This is appended text.</p>"; //This will append but will not work as intended
+
+    // Correct ways to access and modify the content of a div
+    const myDiv = document.getElementById('myDiv');
+    myDiv.innerHTML = '<p>This is replaced text.</p>'; //replace existing content of div tag
+    myDiv.innerHTML += '<p>This is appended text.</p>'; //append new content to the existing content
+    myDiv.textContent = 'This is the content'; //Replace existing content by text
+    myDiv.insertAdjacentHTML('beforeend', '<p>This is another appended text.</p>'); //inserting content at specific location
+  </script>
+</body>
+</html>
