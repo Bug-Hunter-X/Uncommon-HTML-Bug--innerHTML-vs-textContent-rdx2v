@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+
+  <script>
+    // Correct ways to access and modify the content of a div
+    const myDiv = document.getElementById('myDiv');
+    myDiv.innerHTML = '<p>This is replaced text.</p>'; //replace existing content of div tag
+    myDiv.innerHTML += '<p>This is appended text.</p>'; //append new content to the existing content
+    myDiv.textContent = 'This is the content'; //Replace existing content by text
+    myDiv.insertAdjacentHTML('beforeend', '<p>This is another appended text.</p>'); //inserting content at specific location
+
+    // Using insertAdjacentHTML for more controlled content addition
+    myDiv.insertAdjacentHTML('afterbegin', '<p>This is inserted at the beginning.</p>'); //insert content at the beginning of the div
+    myDiv.insertAdjacentHTML('beforebegin', '<p>This is inserted before the div.</p>'); //insert content before div
+    myDiv.insertAdjacentHTML('afterend', '<p>This is inserted after the div.</p>'); //insert content after div
+  </script>
+</body>
+</html>
